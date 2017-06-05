@@ -21,8 +21,10 @@
         <table>
             <thead>
             <tr>
+                <th>Id</th>
                 <th>Tytuł</th>
                 <th>Autor</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>

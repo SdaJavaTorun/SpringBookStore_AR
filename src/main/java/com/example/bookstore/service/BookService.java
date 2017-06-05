@@ -20,7 +20,8 @@ public class BookService {
 
     @Autowired
     public BookService(BookRepository bookRepository,
-                       @Qualifier("bookDescriptionLoripsum")
+                       //@Qualifier("bookDescriptionLoripsum")
+                       @Qualifier("bookDescriptionLipsum")
                                BookDescriptionClient bookDescriptionClient) {
         this.bookRepository = bookRepository;
         this.bookDescriptionClient = bookDescriptionClient;

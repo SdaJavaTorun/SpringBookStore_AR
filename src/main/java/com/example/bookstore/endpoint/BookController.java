@@ -36,10 +36,16 @@ public class BookController {
         return "book-listing";
     }
 
+    @GetMapping("/ajax")
+    public String ajaxListing(){
+        return "ajax-listing";
+    }
+
     @PostMapping()
     public String addBook(@ModelAttribute BookDto bookDto,
                           RedirectAttributes redirectAttributes) {
         bookService.addBook(bookDto.fromDto());
+        // flash trwale przekierowanie
         redirectAttributes.addFlashAttribute("result", "Książka została dodana.");
         return "redirect:/books";
     }

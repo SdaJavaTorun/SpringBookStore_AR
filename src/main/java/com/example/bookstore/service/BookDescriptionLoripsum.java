@@ -3,6 +3,7 @@ package com.example.bookstore.service;
 import com.example.bookstore.model.BookDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestOperations;
 
@@ -11,10 +12,14 @@ import org.springframework.web.client.RestOperations;
 public class BookDescriptionLoripsum implements BookDescriptionClient {
 
     private final RestOperations restOperations;
+    private final String loripsumUrl;
 
     @Autowired
-    public BookDescriptionLoripsum(RestOperations restOperations) {
+    public BookDescriptionLoripsum(RestOperations restOperations,
+                                   // value sciagane sa z application.properties
+                                   @Value("${loripsum.url}") String loripsumUrl) {
         this.restOperations = restOperations;
+        this.loripsumUrl = loripsumUrl;
     }
 
     @Override
@@ -23,9 +28,7 @@ public class BookDescriptionLoripsum implements BookDescriptionClient {
         restOperations.postForEntity("http://localhost:8090/api/books",
                 new BookDto("titee", "asd"), BookDto.class);
         return restOperations.getForEntity(
-                "http://loripsum.net/api/plaintext",
-                String.class)
+                loripsumUrl + "/api/plaintext", String.class)
                 .getBody();
     }
-
 }
