@@ -20,8 +20,8 @@ public class BookService {
 
     @Autowired
     public BookService(BookRepository bookRepository,
-                       //@Qualifier("bookDescriptionLoripsum")
-                       @Qualifier("bookDescriptionLipsum")
+                       @Qualifier("bookDescriptionLoripsum")
+                       //@Qualifier("bookDescriptionLipsum")
                                BookDescriptionClient bookDescriptionClient) {
         this.bookRepository = bookRepository;
         this.bookDescriptionClient = bookDescriptionClient;
@@ -65,6 +65,7 @@ public class BookService {
                 bookBack.getTitle(),
                 bookBack.getAuthor(),
                 bookDescriptionClient.getDescription(bookBack.getId())
-        )).orElseThrow(() -> new BookNotFoundException("Książka " + id + " nieznaleziona"));
+        )).orElseThrow(() ->
+                new BookNotFoundException("Książka " + id + " nieznaleziona"));
     }
 }

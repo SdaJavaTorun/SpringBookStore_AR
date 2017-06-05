@@ -1,21 +1,14 @@
 package com.example.bookstore.repository;
 
-import com.example.bookstore.model.Book;
 import org.junit.Before;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 public class BookRepositoryImplTest {
     BookRepository bookRepository;
 
-    @Before
-    public void setUp() {
-        bookRepository = new BookRepositoryImpl();
-    }
+    //@Before
+    //public void setUp() {
+    //    bookRepository = new BookRepositoryOldImpl();
+   //}
 
 //    @Test
 //    public void shouldNotMutateData() throws Exception {

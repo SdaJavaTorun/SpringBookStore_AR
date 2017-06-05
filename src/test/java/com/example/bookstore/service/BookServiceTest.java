@@ -3,7 +3,7 @@ package com.example.bookstore.service;
 import com.example.bookstore.model.Book;
 import com.example.bookstore.model.BookListing;
 import com.example.bookstore.repository.BookRepository;
-import com.example.bookstore.repository.BookRepositoryImpl;
+//import com.example.bookstore.repository.BookRepositoryOldImpl;
 import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,9 +19,9 @@ public class BookServiceTest {
     BookService bookService;
     BookDescriptionClient descriptionClient;
 
-    @Before
+    /*@Before
     public void setUp() {
-        bookRepository = mock(BookRepositoryImpl.class);
+        bookRepository = mock(BookRepositoryOldImpl.class);
         descriptionClient = mock(BookDescriptionClient.class);
         bookService = new BookService(bookRepository, descriptionClient);
         when(bookRepository.findAll()).thenReturn(
@@ -30,7 +30,7 @@ public class BookServiceTest {
                         new Book("2","title2", "autor2")
                 )
         );
-    }
+    }*/
 
     @Test
     public void getListingData() throws Exception {
