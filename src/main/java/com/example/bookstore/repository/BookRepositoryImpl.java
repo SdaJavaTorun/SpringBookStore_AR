@@ -9,6 +9,7 @@ import java.util.List;
 
 import static org.springframework.data.mongodb.core.query.Criteria.where;
 
+// klasa, ktora teoretycznie powinna nazywac sie BookRepositoryCustomImpl ale z taka nazwa to nie dziala
 public class BookRepositoryImpl implements BookRepositoryCustom {
 
     @Autowired

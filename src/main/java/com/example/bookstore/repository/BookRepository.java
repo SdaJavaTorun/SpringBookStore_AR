@@ -17,7 +17,6 @@ public interface BookRepository extends MongoRepository<Book, String>,
     @Query("{title : ?0}")
     Optional<Book> findUsingCustomQueryTralala(String title);
 
-
     //void delete(Book book);
     //Book save(Book book);
 }
